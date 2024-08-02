@@ -5,16 +5,33 @@
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
-| 1294_S1_L008_R1_001.fastq.gz |  |  |  |
-| 1294_S1_L008_R2_001.fastq.gz |  |  |  |
-| 1294_S1_L008_R3_001.fastq.gz |  |  |  |
-| 1294_S1_L008_R4_001.fastq.gz |  |  |  |
+| 1294_S1_L008_R1_001.fastq.gz |R1 - Biological|101|33|
+| 1294_S1_L008_R2_001.fastq.gz |R2 - Index|8|33|
+| 1294_S1_L008_R3_001.fastq.gz |R3 - Index|8|33|
+| 1294_S1_L008_R4_001.fastq.gz |R4 - Biological|101|33|
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    2. **YOUR ANSWER HERE**
-    3. **YOUR ANSWER HERE**
-    
+    ![alt text](../hist_R1.png)
+    ![alt text](../hist_R2.png)
+    ![alt text](../hist_R3.png)
+    ![alt text](../hist_R4.png)
+
+    2.  
+        Biological reads do not typically need to be a perfectly identical match to align to a genome. Thus, the consequences of a few individual errors within a biological read are not particularly severe, and the quality score cutoff does not need to be as stringent as the quality score cutoff for index reads. Based on the plot of mean quality scores per base position of all biological reads, it seems that there are no base positions for which the mean quality score is less than 30. Therefore, I would propose that a mean quality score cutoff of 30 be used for biological reads. This cutoff will allow for reads with only handful of bases with very low quality scores to still be used in downstream analysis. 
+
+
+        An errorneous base in an index read is more problematic in this scenario as the reads are only 8 base pairs long. If an index is misinterpreted as a different index used in the same lane, it could lead to sample identification errors. Therefore, I would propose a base-by-base quality score cutoff of 30 (which indicates a 1:1000 error rate) for the indexes. This would mean that the entire index read is filtered out if it contains a single base with a quality score less than 30. 
+
+
+    3. `zcat 1294_S1_L008_R2_001.fastq.gz | awk 'NR % 4 == 2' | grep -c -E ".*N.*"`
+   
+         Number of R2 Indexes with undetermined base calls: `3976613`
+
+        `zcat 1294_S1_L008_R3_001.fastq.gz | awk 'NR % 4 == 2' | grep -c -E ".*N.*"`
+
+        Number of R3 Indexes with undetermined base calls: `3328051`
+
 ## Part 2
 1. Define the problem
 
@@ -47,11 +64,10 @@ def ReverseComplement(seq: str) -> str:
 ```
 ```
 def QS_Thresh(qual_score_string: str, cutoff: int) -> bool:
-	```Given a string of quality scores, Calculates the average(?) quality score of a sequence 
-       and returns True if above cutoff and False if below cutoff```
+	```Given a string of quality scores and a cutoff value, returns True if no scores are below the cutoff and False if one or more scores are below the cutoff```
     return True or False
-	Input: #AAAAJJF, 70
-    Expected Output: True
+	Input: #AAA9JJF, 30
+    Expected Output: False
 ```
 ```
 def Append_indexes(header: str, index1: str, index2: str) -> str
