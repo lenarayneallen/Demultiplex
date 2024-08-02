@@ -1,7 +1,7 @@
 # Assignment the First
 
 ## Part 1
-1. Be sure to upload your Python script. Provide a link to it here:
+1. Be sure to upload your Python script. Provide a link to it here: https://github.com/lenarayneallen/Demultiplex/blob/master/Assignment-the-first/qs_dist.py
 
 | File name | label | Read length | Phred encoding |
 |---|---|---|---|
@@ -12,10 +12,10 @@
 
 2. Per-base NT distribution
     1. Use markdown to insert your 4 histograms here.
-    ![alt text](../hist_R1.png)
-    ![alt text](../hist_R2.png)
-    ![alt text](../hist_R3.png)
-    ![alt text](../hist_R4.png)
+    ![alt text](./hist_R1.png)
+    ![alt text](./hist_R2.png)
+    ![alt text](./hist_R3.png)
+    ![alt text](./hist_R4.png)
 
     2.  
         Biological reads do not typically need to be a perfectly identical match to align to a genome. Thus, the consequences of a few individual errors within a biological read are not particularly severe, and the quality score cutoff does not need to be as stringent as the quality score cutoff for index reads. Based on the plot of mean quality scores per base position of all biological reads, it seems that there are no base positions for which the mean quality score is less than 30. Therefore, I would propose that a mean quality score cutoff of 30 be used for biological reads. This cutoff will allow for reads with only handful of bases with very low quality scores to still be used in downstream analysis. 
