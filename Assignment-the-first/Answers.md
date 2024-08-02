@@ -31,6 +31,7 @@
         `zcat 1294_S1_L008_R3_001.fastq.gz | awk 'NR % 4 == 2' | grep -c -E ".*N.*"`
 
         Number of R3 Indexes with undetermined base calls: `3328051`
+       
        	Total Indexes with undetermined base calls: `7304664`
 
 ## Part 2
