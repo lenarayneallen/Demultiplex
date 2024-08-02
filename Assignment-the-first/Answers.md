@@ -48,7 +48,7 @@
     - 2 files for records of unknown reads
 
 3. Upload your [4 input FASTQ files](../TEST-input_FASTQ) and your [>=6 expected output FASTQ files](../TEST-output_FASTQ).
-4. Pseudocode
+4. Pseudocode https://github.com/lenarayneallen/Demultiplex/blob/master/Assignment-the-first/psuedocode.txt
 5. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
