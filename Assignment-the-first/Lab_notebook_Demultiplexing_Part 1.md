@@ -1,12 +1,8 @@
 # Lab notebook: Demultiplexing Part 1
 
-# Initial data exploration:
+## Initial data exploration:
 
-## File location on Talapas: `/projects/bgmp/shared/2017_sequencing/`
-
-### `ls -lah`
-
-![Untitled](Lab%20notebook%20Demultiplexing%20Part%201%20adfe0c668cc443649018ebe729388835/Untitled.png)
+### File location on Talapas: `/projects/bgmp/shared/2017_sequencing/`
 
 ### heading the files:
 
