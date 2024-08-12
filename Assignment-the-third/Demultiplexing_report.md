@@ -1,12 +1,19 @@
 # Demultiplexing report
 
 ## Scripts used for demultiplexing:
+Demultiplexing algorithm: [demulti_pt3.py](https://github.com/lenarayneallen/Demultiplex/blob/47d2fb9b2b404d22d1b7d972b0b566176becc3eb/Assignment-the-third/demulti_pt3.py)
 
+SBATCH script used to run `demulti_pt3.py`: [demulti_script.sh](https://github.com/lenarayneallen/Demultiplex/blob/47d2fb9b2b404d22d1b7d972b0b566176becc3eb/Assignment-the-third/demulti_script.sh)
+
+Script used to generate plots with matplotlib: [plotting.py](https://github.com/lenarayneallen/Demultiplex/blob/47d2fb9b2b404d22d1b7d972b0b566176becc3eb/Assignment-the-third/plotting.py)
+
+Input file for generating plots: [dual_matched.tsv](https://github.com/lenarayneallen/Demultiplex/blob/47d2fb9b2b404d22d1b7d972b0b566176becc3eb/Assignment-the-third/dual_matched.tsv)
 
 ## Lab Notebook:
+[Lab_Notebook_Demultiplexing_Part3.md](https://github.com/lenarayneallen/Demultiplex/blob/47d2fb9b2b404d22d1b7d972b0b566176becc3eb/Assignment-the-third/Lab_Notebook_Demultiplexing_Part3.md)
 
-## Notes:
-- Quality score cutoff: the quality score for each base in an index read must be >= 30. An index read containing a quality score less than 30 will be considered "unknown". 
+## Quality Score Cutoff:
+- The quality score for each base in an index read must be >= 30. An index read containing a quality score less than 30 will be considered "unknown". 
 
 ## Rough statistics
 - **Total number of dual matched read-pairs:** 226715602
@@ -47,6 +54,11 @@
 
 ## Plots
 
+- Top three most represented samples: sample #10, sample #23, and sample #8
+
+![sample_counts](https://github.com/user-attachments/assets/1005750d-4221-41cd-9482-b8906b7d82dc)
+
+![sample_percent](https://github.com/user-attachments/assets/dbdb5684-1d6c-4427-994b-32727081b7a2)
 
 ## Counts for ALL observed pairs of indexes:
-- See `index_stats.txt` raw output file:
+- See output summary file: [index_stats.txt](https://github.com/lenarayneallen/Demultiplex/blob/47d2fb9b2b404d22d1b7d972b0b566176becc3eb/Assignment-the-third/index_stats.txt)
