@@ -31,6 +31,8 @@
         `zcat 1294_S1_L008_R3_001.fastq.gz | awk 'NR % 4 == 2' | grep -c -E ".*N.*"`
 
         Number of R3 Indexes with undetermined base calls: `3328051`
+       
+       	Total Indexes with undetermined base calls: `7304664`
 
 ## Part 2
 1. Define the problem
@@ -48,7 +50,7 @@
     - 2 files for records of unknown reads
 
 3. Upload your [4 input FASTQ files](../TEST-input_FASTQ) and your [>=6 expected output FASTQ files](../TEST-output_FASTQ).
-4. Pseudocode
+4. Pseudocode https://github.com/lenarayneallen/Demultiplex/blob/master/Assignment-the-first/psuedocode.txt
 5. High level functions. For each function, be sure to include:
     1. Description/doc string
     2. Function headers (name and parameters)
@@ -64,17 +66,17 @@ def ReverseComplement(seq: str) -> str:
 ```
 ```
 def QS_Thresh(qual_score_string: str, cutoff: int) -> bool:
-	```Given a string of quality scores and a cutoff value, returns True if no scores are below the cutoff and False if one or more scores are below the cutoff```
-    return True or False
+	```Given a string of quality scores and a cutoff value, returns True if no 	scores are below the cutoff and False if one or more scores are below the 	cutoff```
+    	return True or False
 	Input: #AAA9JJF, 30
-    Expected Output: False
+    	Expected Output: False
 ```
 ```
 def Append_indexes(header: str, index1: str, index2: str) -> str
-    ```Provided a header line (as a string) and two index sequences 
-    (also as strings) append index sequences to header line in the following
-    format: header index1-index2
-    return updated_header
-    Input: @K00337:83:HJKJNBBXX:8:1101:1286:1191 4:N:0:1, TACGCTAC, GTAGCGTA
-    Expected Output: @K00337:83:HJKJNBBXX:8:1101:1286:1191 TACGCTAC-GTAGCGTA
+	```Provided a header line (as a string) and two index sequences 
+	(also as strings) append index sequences to header line in the following
+	format: header index1-index2
+	return updated_header
+	Input: @K00337:83:HJKJNBBXX:8:1101:1286:1191 4:N:0:1, TACGCTAC, GTAGCGTA
+	Expected Output: @K00337:83:HJKJNBBXX:8:1101:1286:1191 TACGCTAC-GTAGCGTA
 ```
